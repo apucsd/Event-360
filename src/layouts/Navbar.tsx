@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="h-[96px]">
-      <nav className="max-w-[1280px] mx-auto py-[24px] px-[80px] lg:flex h-full bg-blue-100  justify-between items-center w-full">
+    <div className="min-h-[96px] m-auto text-center">
+      <nav className="max-w-[1280px] mx-auto py-[24px] px-[80px] lg:flex h-full  justify-between items-center w-full">
         <span className="text-[32px] font-semibold">
           Event <span className="gradientBg">360</span>
         </span>
