@@ -4,6 +4,7 @@ import Services from "./Services";
 import EventItems from "./EventItems";
 import Gallery from "./Gallery";
 import Pricing from "./Pricing";
+import Review from "./Review";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <EventItems></EventItems>
         <Gallery></Gallery>
         <Pricing></Pricing>
+        <Review></Review>
       </Container>
     </div>
   );
