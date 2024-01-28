@@ -5,7 +5,7 @@ const Banner = () => {
         <h1 className="text-4xl lg:text-[64px] md:text-4xl font-bold uppercase md:text-nowrap text-wrap">
           Brand New event Packages
         </h1>
-        <h1 className="md:text-3xl lg:text-[56px] font-extrabold gradientBg">
+        <h1 className="md:text-3xl lg:text-[56px] py-1 font-extrabold gradientBg">
           <span className="">For Winter</span>
         </h1>
         <p className="max-w-[70ch] mx-auto">

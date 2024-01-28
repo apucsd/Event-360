@@ -9,7 +9,7 @@ const Services = () => {
         subHeading="Crafting Unforgettable Moments, Every Angle Captured. Our 360° Event Services: Where Experiences Take Center Stage."
       ></SectionTitles>
 
-      <div className="grid gap-6 mt-6  md:grid-cols-2 lg:grid-cols-3 p-5">
+      <div className="grid gap-6 mt-6 place-items-center  md:grid-cols-2 lg:grid-cols-3 p-5">
         <div className="p-4 bg-[#5A01CB0D] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10">
           <img
             className="w-[360px] h-[240px] rounded "
@@ -285,7 +285,7 @@ const Services = () => {
               <span>Specific organizational goals.</span>
             </li>
           </ul>
-          <Button className="w-full mt-14">Check it out</Button>
+          <Button className="w-full mt-6">Check it out</Button>
         </div>
       </div>
     </div>
