@@ -2,6 +2,8 @@ import Container from "@/components/ui/Container";
 import Banner from "./Banner";
 import Services from "./Services";
 import EventItems from "./EventItems";
+import Gallery from "./Gallery";
+import Pricing from "./Pricing";
 
 const Home = () => {
   return (
@@ -10,6 +12,8 @@ const Home = () => {
         <Banner></Banner>
         <Services></Services>
         <EventItems></EventItems>
+        <Gallery></Gallery>
+        <Pricing></Pricing>
       </Container>
     </div>
   );
