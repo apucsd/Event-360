@@ -10,7 +10,10 @@ const Services = () => {
       ></SectionTitles>
 
       <div className="grid gap-6 mt-6 place-items-center  md:grid-cols-2 lg:grid-cols-3 p-5">
-        <div className="p-4 bg-[#5A01CB0D] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10">
+        <div
+          data-aos="fade-up"
+          className="p-4 bg-[#5A01CB0D] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10"
+        >
           <img
             className="w-[360px] h-[240px] rounded "
             src="https://s3-alpha-sig.figma.com/img/bc55/c289/cc8c7f22ea35a50e7e1293063427df1b?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=P1Oq4edcVQKA15X1owfwPNFasjs4aeNSmH26oqRZ923-evZYz8iBfsXWwOn6a1X-5Fz0in5NGFyiVENuQswUkIsVVCOYWcVu~d4ZIVjUTTpe4I~-Vr5aWeHgFVJgsuoiAe8rKAJoOy3IWwu04AHdUyIUPsI9jnlnD-ZBmrL-ez927eBqk0wa8Yt2eEDGbS3oqFmzk2UXt90J4p5S60KunXNlFVKesSA6TNieiQ3LMoLfi3ImwKVugato~wSe1ECBJq-gbNxpYTQNGGoqTcjj2WhDravqFnUwBhKT4eLecj5xDRCBaTfBtJAkbYSZHWBoITvGFB~0REkn5LofOufKzA__"
@@ -91,7 +94,10 @@ const Services = () => {
             </li>
           </ul>
         </div>
-        <div className="p-4 bg-[#5A01CB0D] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10">
+        <div
+          data-aos="fade-up"
+          className="p-4 bg-[#5A01CB0D] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10"
+        >
           <img
             className="w-[360px] h-[240px] rounded  "
             src="https://s3-alpha-sig.figma.com/img/4e9a/37aa/41ff2820999cec386232f2f1ca09f15b?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fRshb5Ea1uLf~u0MZWWshtTIFyC80uB2YVLjCdsKb9hBxgLr5UxcGD4VVMqUECriFXdwoX~4qVGdvvdiJEeBhDxPuMs6TDIbyvofvuNmjIqPZ-jOUeD2F~d7zAJeXhGw4xYlnxHRZ420CleocI~ugmP5f-M2dHRNzchwpYGnKJflsqFYb7KSWj7Xuhs4gcQu3h6umuF7OcUD9JQtLpmoLT4FQH4na3FQ03eK8WR3Tn5srI9UYcxFS7QAdvLeZZ0qM~PkT7V1LHiai4~taWQo94nIsybHVkPg2BbEaGTNyZgoR8N5jnwSVQdlUOxfqukfuUOImcPz4WgHca2vB~M9xQ__"
@@ -172,7 +178,10 @@ const Services = () => {
             </li>
           </ul>
         </div>
-        <div className="p-4 relative bg-[#d0d0d8] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10">
+        <div
+          data-aos="fade-up"
+          className="p-4 relative bg-[#d0d0d8] shadow-xl rounded-sm ring-1 ring-black/5 shadow-black/10"
+        >
           <p className="mt-6 text-4xl font-bold tracking-tighter">
             Wedding event
           </p>

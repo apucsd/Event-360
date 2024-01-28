@@ -1,0 +1,15 @@
+import { useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+const useScale = () => {
+  const componentRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: componentRef,
+    offset: ["0 1", "0.9 1"],
+  });
+  const scaleValues = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  return { scaleValues, componentRef };
+};
+
+export default useScale;

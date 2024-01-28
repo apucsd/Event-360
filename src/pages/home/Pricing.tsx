@@ -10,7 +10,9 @@ const Pricing = () => {
       ></SectionTitles>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[35px]">
         <div
-          className="hover:bg-primary group hover:text-white transition-all  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+          className="hover:bg-primary  group hover:text-white transition-all  delay-150  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
           style={{
             boxShadow:
               "rgba(45, 50, 130, 0.15) 0px 12px 16px -4px, rgba(45, 50, 130, 0.15) 0px 4px 6px -2px",
@@ -137,7 +139,7 @@ const Pricing = () => {
           </div>
         </div>
         <div
-          className="hover:bg-primary group hover:text-white transition-all  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
+          className="hover:bg-primary  group hover:text-white transition-all  delay-150  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
           style={{
             boxShadow:
               "rgba(45, 50, 130, 0.15) 0px 12px 16px -4px, rgba(45, 50, 130, 0.15) 0px 4px 6px -2px",
@@ -264,7 +266,9 @@ const Pricing = () => {
           </div>
         </div>
         <div
-          className="hover:bg-primary group hover:text-white transition-all  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
+          data-aos="fade-left"
+          data-aos-duration="2000"
+          className="hover:bg-primary  group hover:text-white transition-all  delay-150  rounded-2xl border  divide-y divide-gray-200 max-w-sm mx-auto mt-20"
           style={{
             boxShadow:
               "rgba(45, 50, 130, 0.15) 0px 12px 16px -4px, rgba(45, 50, 130, 0.15) 0px 4px 6px -2px",

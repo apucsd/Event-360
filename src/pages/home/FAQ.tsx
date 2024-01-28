@@ -7,9 +7,10 @@ export const FAQ = () => {
     animationData: FaqAnim,
     loop: true,
   });
+
   return (
     <div className="relative grid grid-cols-1 md:grid-cols-2 place-items-end justify-center">
-      <div className="py-4">
+      <div data-aos="fade-right" data-aos-duration="1000" className="py-4">
         <div className=" mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between">
           <div className="">
             <SectionTitles
@@ -111,7 +112,9 @@ export const FAQ = () => {
           </div>
         </div>
       </div>
-      <div className="w-full ">{View}</div>
+      <div data-aos="fade-left" data-aos-duration="1000" className="w-full ">
+        {View}
+      </div>
       <div className=" md:w-[1000px] h-[1000px] rounded-[999px] absolute bottom-0 left-0 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-fuchsia-100 via-gray-100 to-blue-100"></div>
     </div>
   );

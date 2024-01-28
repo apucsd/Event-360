@@ -1,17 +1,58 @@
+import { motion } from "framer-motion";
 const Banner = () => {
+  const animate = {
+    initial: {
+      opacity: 0.5,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+  const childAnimate = {
+    initial: {
+      y: -200,
+    },
+    animate: {
+      y: 0,
+
+      transition: {
+        duration: 2,
+        y: {
+          duration: 2,
+        },
+      },
+    },
+  };
   return (
-    <div className=" w-full md:p-20">
+    <motion.div
+      className=" w-full md:p-20"
+      variants={animate}
+      initial="initial"
+      animate="animate"
+    >
       <div className="text-center space-y-8 pb-10">
-        <h1 className="text-4xl lg:text-[64px] md:text-4xl font-bold uppercase md:text-nowrap text-wrap">
+        <motion.h1
+          variants={childAnimate}
+          className="text-4xl lg:text-[64px] md:text-4xl font-bold uppercase md:text-nowrap text-wrap"
+        >
           Brand New event Packages
-        </h1>
-        <h1 className="md:text-3xl lg:text-[56px] py-1 font-extrabold gradientBg">
-          <span className="">For Winter</span>
-        </h1>
-        <p className="max-w-[70ch] mx-auto">
+        </motion.h1>
+        <motion.h1
+          variants={childAnimate}
+          className="md:text-3xl lg:text-[56px] py-1 font-extrabold gradientBg"
+        >
+          <span className="gradientBg">
+            <span className="gradientBg">For Winter</span>
+          </span>
+        </motion.h1>
+        <motion.p variants={childAnimate} className="max-w-[70ch] mx-auto">
           Step into a world where moments are not just witnessed but celebrated
           – welcome to our extraordinary event experience.
-        </p>
+        </motion.p>
       </div>
       <div>
         <img
@@ -20,8 +61,8 @@ const Banner = () => {
           alt=""
         />
       </div>
-      <div className="w-[300px] h-[300px] rounded-[999px] absolute bottom-[-10px] left-0 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-green-200 via-cyan-200 to-Fuchsia-300"></div>
-    </div>
+      <div className="w-[300px] h-[300px] rounded-[999px] absolute top-[100px] left-20 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-green-200 via-cyan-200 to-Fuchsia-300"></div>
+    </motion.div>
   );
 };
 

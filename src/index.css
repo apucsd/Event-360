@@ -52,8 +52,8 @@
   .gradientBg {
     background: linear-gradient(
       to top left,
-      rgb(118, 18, 250),
-      rgb(254, 229, 0)
+      rgb(112, 3, 255),
+      rgb(255, 230, 0)
     );
     background-clip: text;
     color: transparent;
