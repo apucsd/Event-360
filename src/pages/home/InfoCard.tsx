@@ -29,29 +29,6 @@ const InfoCard = () => {
                     </blockquote>
                     <figcaption className="text-center">
                       <div className="font-display text-slate-900 text-2xl">
-                        EVENTS
-                      </div>
-                    </figcaption>
-                  </figure>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-                <li>
-                  <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
-                    <blockquote className="relative p-3">
-                      <p className="text-6xl font-bold tracking-tight text-primary">
-                        <CountUp
-                          enableScrollSpy={true}
-                          end={10000}
-                          duration={3}
-                        />{" "}
-                        +
-                      </p>
-                    </blockquote>
-                    <figcaption className="text-center">
-                      <div className="font-display text-slate-900 text-2xl">
                         CLIENT
                       </div>
                     </figcaption>
@@ -65,17 +42,30 @@ const InfoCard = () => {
                   <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
                     <blockquote className="relative p-3">
                       <p className="text-6xl font-bold tracking-tight text-primary">
-                        <CountUp
-                          enableScrollSpy={true}
-                          end={2000}
-                          duration={3}
-                        />{" "}
-                        +
+                        <CountUp enableScrollSpy={true} end={1000} /> +
                       </p>
                     </blockquote>
                     <figcaption className="text-center">
                       <div className="font-display text-slate-900 text-2xl">
-                        EXHIBITIONS
+                        COMPLETED EVENT
+                      </div>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
+                <li>
+                  <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
+                    <blockquote className="relative p-3">
+                      <p className="text-6xl font-bold tracking-tight text-primary">
+                        <CountUp enableScrollSpy={true} end={97} /> %
+                      </p>
+                    </blockquote>
+                    <figcaption className="text-center">
+                      <div className="font-display text-slate-900 text-2xl">
+                        SUCCESS RATE
                       </div>
                     </figcaption>
                   </figure>

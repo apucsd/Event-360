@@ -7,6 +7,7 @@ import Pricing from "./Pricing";
 import Review from "./Review";
 import RecentEvent from "./RecentEvent";
 import InfoCard from "./InfoCard";
+import { FAQ } from "./FAQ";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <Review></Review>
         <RecentEvent></RecentEvent>
         <InfoCard></InfoCard>
+        <FAQ></FAQ>
       </Container>
     </div>
   );
