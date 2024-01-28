@@ -5,6 +5,7 @@ import EventItems from "./EventItems";
 import Gallery from "./Gallery";
 import Pricing from "./Pricing";
 import Review from "./Review";
+import RecentEvent from "./RecentEvent";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Gallery></Gallery>
         <Pricing></Pricing>
         <Review></Review>
+        <RecentEvent></RecentEvent>
       </Container>
     </div>
   );
