@@ -8,7 +8,7 @@ const Banner = () => {
       opacity: 1,
       transition: {
         duration: 1,
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -20,9 +20,9 @@ const Banner = () => {
       y: 0,
 
       transition: {
-        duration: 2,
+        duration: 0.6,
         y: {
-          duration: 2,
+          duration: 0.7,
         },
       },
     },

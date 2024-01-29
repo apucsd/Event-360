@@ -8,7 +8,7 @@ const useScale = () => {
     target: componentRef,
     offset: ["0 1", "0.9 1"],
   });
-  const scaleValues = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  const scaleValues = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
   return { scaleValues, componentRef };
 };
 
