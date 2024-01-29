@@ -34,7 +34,7 @@ const Breadcrumbs = () => {
         </Link>
         {breadcrumbs.map((breadcrumb, index) => (
           <div key={breadcrumb.path}>
-            <span className="mx-5 text-gray-500 dark:text-gray-300">/</span>
+            <span className="mx-5 bg-gray-100">/</span>
             <Link
               to={breadcrumb.path}
               className={`text-${

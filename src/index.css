@@ -58,6 +58,12 @@
     background-clip: text;
     color: transparent;
   }
+  .input {
+    @apply appearance-none block w-full  border border-primary rounded py-3 px-4 mb-3 focus-visible:ring-0 focus:right-0  focus:outline-none;
+  }
+  .label {
+    @apply block uppercase tracking-wide  text-xs font-bold mb-2;
+  }
 }
 ::-webkit-scrollbar {
   width: 6px;

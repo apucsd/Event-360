@@ -1,58 +1,32 @@
-import { motion } from "framer-motion";
-const Banner = () => {
-  const animate = {
-    initial: {
-      opacity: 0.5,
-    },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-  const childAnimate = {
-    initial: {
-      y: -200,
-    },
-    animate: {
-      y: 0,
+import { useScramble } from "use-scramble";
 
-      transition: {
-        duration: 0.6,
-        y: {
-          duration: 0.7,
-        },
-      },
-    },
-  };
+const Banner = () => {
+  const { ref, replay } = useScramble({
+    text: "Brand New event Packages",
+    speed: 0.7,
+    scramble: 3,
+  });
+
   return (
-    <motion.div
-      className=" w-full md:p-20"
-      variants={animate}
-      initial="initial"
-      animate="animate"
-    >
+    <div className="overflow-x-hidden w-full md:p-20">
       <div className="text-center space-y-8 pb-10">
-        <motion.h1
-          variants={childAnimate}
+        <h1
+          ref={ref}
+          onMouseOver={replay}
+          onFocus={replay}
           className="text-4xl lg:text-[64px] md:text-4xl font-bold uppercase md:text-nowrap text-wrap"
         >
           Brand New event Packages
-        </motion.h1>
-        <motion.h1
-          variants={childAnimate}
-          className="md:text-3xl lg:text-[56px] py-1 font-extrabold gradientBg"
-        >
+        </h1>
+        <h1 className="md:text-3xl lg:text-[56px] py-1 font-extrabold gradientBg">
           <span className="gradientBg">
             <span className="gradientBg">For Winter</span>
           </span>
-        </motion.h1>
-        <motion.p variants={childAnimate} className="max-w-[70ch] mx-auto">
+        </h1>
+        <p className="max-w-[70ch] mx-auto">
           Step into a world where moments are not just witnessed but celebrated
           – welcome to our extraordinary event experience.
-        </motion.p>
+        </p>
       </div>
       <div>
         <img
@@ -62,7 +36,7 @@ const Banner = () => {
         />
       </div>
       <div className="w-[300px] h-[300px] rounded-[999px] absolute top-[100px] left-20 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-green-200 via-cyan-200 to-Fuchsia-300"></div>
-    </motion.div>
+    </div>
   );
 };
 

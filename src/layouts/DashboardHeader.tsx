@@ -5,7 +5,7 @@ import { Settings2Icon } from "lucide-react";
 import { toast } from "sonner";
 const DashboardHeader = () => {
   return (
-    <div className="h-14 bg-white backdrop-filter backdrop-blur-md py-2 my-2 sticky rounded-md p-5 top-0 left-0 w-full">
+    <div className="h-14 lg:mb-0 mb-10 bg-white backdrop-filter backdrop-blur-md py-2 my-2 rounded-md p-5 top-0 left-0 w-full">
       <div className="flex lg:flex-row md:flex-row flex-col h-full justify-between items-center">
         <Breadcrumbs></Breadcrumbs>
         <div className="flex justify-center items-center gap-5">
