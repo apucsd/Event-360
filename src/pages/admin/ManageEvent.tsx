@@ -1,3 +1,12 @@
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -8,78 +17,81 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { axiosInstance } from "@/lib/axiosInstance";
+import { TEvent } from "@/types/types";
+import { useQuery } from "@tanstack/react-query";
+import { CircleEllipsis } from "lucide-react";
 const ManageEvent = () => {
-  const events = [
-    {
-      eventName: "Corporate Gala",
-      image: "text",
-      date: 12,
-      location: "Grand Hall",
-      description: "A night of celebration and networking.",
-      features: ["Live Music", "Catering", "Awards Ceremony"],
+  const { data: events } = useQuery<TEvent[]>({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const res = await axiosInstance("/events");
+      return res.data.result;
     },
-    {
-      eventName: "Tech Conference",
-      image: "text",
-      date: 12,
-      location: "Tech Hub Convention Center",
-      description: "Explore the latest in technology and innovation.",
-      features: ["Keynote Speakers", "Workshops", "Startup Showcase"],
-    },
-    {
-      eventName: "Wedding Expo",
-      image: "text",
-      date: 12,
-      location: "Dream Wedding Hall",
-      description: "Everything you need for your dream wedding.",
-      features: ["Fashion Show", "Vendor Booths", "Exclusive Discounts"],
-    },
-    {
-      eventName: "Community Fun Fair",
-      image: "text",
-      date: 12,
-      location: "City Park",
-      description: "A day of fun, games, and community spirit.",
-      features: ["Carnival Games", "Food Stalls", "Live Performances"],
-    },
-    {
-      eventName: "Business Networking Breakfast",
-      image: "text",
-      date: 12,
-      location: "Skyline Business Center",
-      description: "Connect with professionals over breakfast.",
-      features: [
-        "Networking Sessions",
-        "Guest Speakers",
-        "Morning Refreshments",
-      ],
-    },
-  ];
+  });
+  console.log(events);
   return (
     <div>
       <Table className="bg-white rounded-md">
-        <TableCaption>A list of your recent invoices.</TableCaption>
-        <TableHeader>
+        <TableCaption>A list of your recent Events.</TableCaption>
+        <TableHeader className="text-start">
           <TableRow>
-            <TableHead className="w-[100px]">Invoice</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            {/* Add a TableRow here */}
+            <TableHead>SL</TableHead>
+            <TableHead>Event Image</TableHead>
+            <TableHead>Event Name</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead>Location</TableHead>
+            <TableHead>Organizer</TableHead>
+            <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {events.map((event) => (
-            <TableRow key={event.eventName}>
+          {events?.map((event, sl) => (
+            <TableRow key={event._id}>
+              <TableCell className="font-medium">{sl + 1}</TableCell>
+              <TableCell className="font-medium">
+                <img
+                  className="w-8 rounded-full h-8"
+                  src={event.image as string}
+                  alt=""
+                />
+              </TableCell>
               <TableCell className="font-medium">{event.eventName}</TableCell>
+              <TableCell className="truncate">
+                <p className="font-medium truncate max-w-[20ch] overflow-ellipsis">
+                  {event.description}
+                </p>
+              </TableCell>
               <TableCell className="font-medium">{event.location}</TableCell>
-              <TableCell className="font-medium">{event.date}</TableCell>
+              <TableCell className="font-medium">
+                {event.organizerName}
+              </TableCell>
+              <TableCell className="font-medium">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost">
+                      <CircleEllipsis className="text-red-500"></CircleEllipsis>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuLabel>Take a action</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                      {/* <UpdateService id={service._id as string}></UpdateService>
+
+                      <DeleteService id={service._id as string}></DeleteService> */}
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>Total Events</TableCell>
-            <TableCell className="text-right">{events.length}</TableCell>
+            <TableCell colSpan={6}>Total Events</TableCell>
+            <TableCell className="text-right">{events?.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

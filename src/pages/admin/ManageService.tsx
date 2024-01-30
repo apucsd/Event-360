@@ -1,3 +1,12 @@
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -8,9 +17,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
 import { axiosInstance } from "@/lib/axiosInstance";
 import { TService } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
+import { CircleEllipsis } from "lucide-react";
+import DeleteService from "@/crud/DeleteService";
+import UpdateService from "@/crud/UpdateService";
 
 const ManageService = () => {
   const { data: services } = useQuery<TService[]>({
@@ -28,31 +41,64 @@ const ManageService = () => {
         <TableHeader className="text-start">
           <TableRow>
             {/* Add a TableRow here */}
+            <TableHead>SL</TableHead>
             <TableHead>Service Image</TableHead>
             <TableHead>Service Name</TableHead>
             <TableHead>Description</TableHead>
+            <TableHead>Price</TableHead>
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {services?.map((service: TService) => (
+          {services?.map((service, sl) => (
             <TableRow key={service._id}>
+              <TableCell className="font-medium">{sl + 1}</TableCell>
+              <TableCell className="font-medium">
+                <img
+                  className="w-8 rounded-full h-8"
+                  src={service.image as string}
+                  alt=""
+                />
+              </TableCell>
               <TableCell className="font-medium">
                 {service.serviceName}
               </TableCell>
-              <TableCell className="font-medium">{service.price}</TableCell>
-              <TableCell className="font-medium">{service.price}</TableCell>
-              <TableCell className="font-medium">{service.price}</TableCell>
+              <TableCell className="truncate">
+                <p className="font-medium truncate max-w-[20ch] overflow-ellipsis">
+                  {service.description}
+                </p>
+              </TableCell>
+              <TableCell className="font-medium">{service.price} ৳</TableCell>
+              <TableCell className="font-medium">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost">
+                      <CircleEllipsis className="text-red-500"></CircleEllipsis>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuLabel>Take a action</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                      <UpdateService id={service._id as string}></UpdateService>
+
+                      <DeleteService id={service._id as string}></DeleteService>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>Total services</TableCell>
+            <TableCell colSpan={4}>Total services</TableCell>
             <TableCell className="text-right">{services?.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
+
+      {/* model is here */}
     </div>
   );
 };

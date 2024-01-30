@@ -11,15 +11,21 @@ import { serviceOptions } from "@/constant/constant";
 const AddService = () => {
   const [loading, setLoading] = useState(false);
   const { handleSubmit, reset, setValue, register } = useForm<TService>();
-  const { isSuccess, mutate } = useMutation<TService, void, TService>({
+  const { mutate } = useMutation<TService, void, TService>({
     mutationFn: (data) => {
       return axiosInstance.post("/services", data);
+    },
+    onSuccess: () => {
+      toast.success("Service added successfully");
+    },
+    onError: () => {
+      toast.error("something went wrong");
     },
   });
   const onSubmit: SubmitHandler<TService> = async (data: TService) => {
     setLoading(true);
     data.price = parseFloat(data.price as string);
-    const imageURL = await getImageURL(data.image[0]);
+    const imageURL = await getImageURL(data.image[0] as File);
     data.image = imageURL;
     if (imageURL) {
       mutate(data);
@@ -30,7 +36,6 @@ const AddService = () => {
       toast.error("Something went wrong");
     }
   };
-  if (isSuccess) toast.success("Service added successfully");
 
   return (
     <div>

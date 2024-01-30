@@ -1,27 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { eventOptions } from "@/constant/constant";
+import { axiosInstance } from "@/lib/axiosInstance";
 import getImageURL from "@/lib/getImageURL";
+import { TEvent } from "@/types/types";
+import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import CreatableSelect from "react-select/creatable";
-type TEvent = {
-  eventName: string;
-  image: FileList;
-  date: Date;
-  location: string;
-  description: string;
-  features: string[];
-  organizerEmail: string;
-  organizerName: string;
-};
+import { toast } from "sonner";
+
 const AddEvent = () => {
-  const { handleSubmit, setValue, register } = useForm<TEvent>();
+  const [loading, setLoading] = useState(false);
+  const { mutate } = useMutation<TEvent, void, TEvent>({
+    mutationFn: (data) => {
+      return axiosInstance.post("/events", data);
+    },
+    onMutate: () => {
+      setLoading(true);
+    },
+    onError: () => {
+      setLoading(false);
+      toast.error("Error while adding event");
+    },
+    onSuccess: () => {
+      setLoading(false);
+      toast.success("Event added successfully");
+    },
+  });
+  const { reset, handleSubmit, setValue, register } = useForm<TEvent>();
 
   const onSubmit: SubmitHandler<TEvent> = async (data: TEvent) => {
     const imageURL = await getImageURL(data.image[0]);
     data.image = imageURL;
-    console.log(imageURL);
-    console.log(data);
+    if (imageURL) {
+      mutate(data);
+
+      reset();
+    } else {
+      toast.error("Something went wrong while updating the image");
+    }
   };
 
   return (
@@ -148,7 +166,7 @@ const AddEvent = () => {
         <p className="text-red text-xs italic">Please fill out this field.</p>
         <div className="-mx-3 md:flex mb-2">
           <Button className="w-full md:w-[20%] ms-auto" type="submit">
-            Add Event
+            {loading ? "Adding Event..." : " Add Event"}
           </Button>
         </div>
       </form>
