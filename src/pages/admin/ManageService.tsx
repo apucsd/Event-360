@@ -92,13 +92,11 @@ const ManageService = () => {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={4}>Total services</TableCell>
+            <TableCell colSpan={5}>Total services</TableCell>
             <TableCell className="text-right">{services?.length}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
-
-      {/* model is here */}
     </div>
   );
 };

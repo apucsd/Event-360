@@ -31,14 +31,15 @@ const AddEvent = () => {
   const { reset, handleSubmit, setValue, register } = useForm<TEvent>();
 
   const onSubmit: SubmitHandler<TEvent> = async (data: TEvent) => {
-    const imageURL = await getImageURL(data.image[0]);
+    setLoading(true);
+    const imageURL = await getImageURL(data.image[0] as File);
     data.image = imageURL;
     if (imageURL) {
       mutate(data);
-
       reset();
     } else {
       toast.error("Something went wrong while updating the image");
+      setLoading(false);
     }
   };
 
@@ -97,7 +98,7 @@ const AddEvent = () => {
               {...register("organizerEmail")}
               id="price"
               type="email"
-              placeholder="01/01/2030"
+              placeholder="example@gmail.com"
               required
             />
           </div>
@@ -165,7 +166,11 @@ const AddEvent = () => {
         </div>
         <p className="text-red text-xs italic">Please fill out this field.</p>
         <div className="-mx-3 md:flex mb-2">
-          <Button className="w-full md:w-[20%] ms-auto" type="submit">
+          <Button
+            disabled={loading}
+            className="w-full md:w-[20%] ms-auto"
+            type="submit"
+          >
             {loading ? "Adding Event..." : " Add Event"}
           </Button>
         </div>

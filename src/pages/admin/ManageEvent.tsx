@@ -17,13 +17,15 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import DeleteEvent from "@/crud/DeleteEvent";
+import UpdateEvent from "@/crud/UpdateEvent";
 import { axiosInstance } from "@/lib/axiosInstance";
 import { TEvent } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 import { CircleEllipsis } from "lucide-react";
 const ManageEvent = () => {
   const { data: events } = useQuery<TEvent[]>({
-    queryKey: ["services"],
+    queryKey: ["events"],
     queryFn: async () => {
       const res = await axiosInstance("/events");
       return res.data.result;
@@ -78,9 +80,9 @@ const ManageEvent = () => {
                     <DropdownMenuLabel>Take a action</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
-                      {/* <UpdateService id={service._id as string}></UpdateService>
+                      <UpdateEvent id={event._id as string}></UpdateEvent>
 
-                      <DeleteService id={service._id as string}></DeleteService> */}
+                      <DeleteEvent id={event._id as string}></DeleteEvent>
                     </DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>

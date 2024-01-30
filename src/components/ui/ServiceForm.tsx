@@ -28,6 +28,7 @@ const ServiceForm = ({
             Service Name
           </label>
           <input
+            required
             {...register("serviceName")}
             className="input"
             type="text"
@@ -39,6 +40,7 @@ const ServiceForm = ({
             Price
           </label>
           <input
+            required
             className="input"
             {...register("price")}
             id="price"
@@ -77,7 +79,12 @@ const ServiceForm = ({
 
         <div className="md:w-1/2 px-3">
           <label className="label">Event Image/Logo</label>
-          <input {...register("image")} type="file" className="input" />
+          <input
+            required
+            {...register("image")}
+            type="file"
+            className="input"
+          />
         </div>
       </div>
 

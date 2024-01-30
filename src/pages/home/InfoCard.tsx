@@ -1,10 +1,13 @@
+import { cn } from "@/lib/utils";
 import CountUp from "react-countup";
 
-const InfoCard = () => {
+const InfoCard = ({ className }: { className?: string }) => {
   return (
     <div>
-      <section id="count" className=" relative py-20 sm:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section id="count" className=" relative ">
+        <div
+          className={cn(`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`)}
+        >
           <div className="mx-auto max-w-2xl md:text-center">
             <h2 className="font-display text-3xl tracking-tight text-primary sm:text-4xl">
               SUCCESSFULLY COMPLETED 7000+ Events
