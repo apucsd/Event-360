@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { eventOptions } from "@/constant/constant";
 import getImageURL from "@/lib/getImageURL";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -22,14 +23,7 @@ const AddEvent = () => {
     console.log(imageURL);
     console.log(data);
   };
-  const eventOptions = [
-    { value: "catering", label: "Catering Service" },
-    { value: "photography", label: "Photography Service" },
-    { value: "audio-visual", label: "Audio-Visual Setup" },
-    { value: "decorations", label: "Decorations Service" },
-    { value: "transportation", label: "Transportation Service" },
-    { value: "entertainment", label: "Entertainment Booking" },
-  ];
+
   return (
     <div>
       <form

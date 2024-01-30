@@ -3,22 +3,17 @@ import getImageURL from "@/lib/getImageURL";
 import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
-import axios from "axios";
 import { toast } from "sonner";
 import { useState } from "react";
-type TService = {
-  serviceName: string;
-  image: FileList;
-  description: string;
-  price: string | number;
-  features: string[];
-};
+import { TService } from "@/types/types";
+import { axiosInstance } from "@/lib/axiosInstance";
+import { serviceOptions } from "@/constant/constant";
 const AddService = () => {
   const [loading, setLoading] = useState(false);
   const { handleSubmit, reset, setValue, register } = useForm<TService>();
-  const { isSuccess, mutate } = useMutation<TService>({
+  const { isSuccess, mutate } = useMutation<TService, void, TService>({
     mutationFn: (data) => {
-      return axios.post("http://localhost:5000/services", data);
+      return axiosInstance.post("/services", data);
     },
   });
   const onSubmit: SubmitHandler<TService> = async (data: TService) => {
@@ -27,7 +22,7 @@ const AddService = () => {
     const imageURL = await getImageURL(data.image[0]);
     data.image = imageURL;
     if (imageURL) {
-      mutate();
+      mutate(data);
       setLoading(false);
       reset();
     } else {
@@ -37,20 +32,6 @@ const AddService = () => {
   };
   if (isSuccess) toast.success("Service added successfully");
 
-  const eventOptions = [
-    { value: "registration", label: "Event Registration" },
-    { value: "ticketing", label: "Ticketing System" },
-    { value: "schedule", label: "Event Schedule" },
-    { value: "speaker", label: "Speaker Management" },
-    { value: "sponsorship", label: "Sponsorship Management" },
-    { value: "venue", label: "Venue Selection and Booking" },
-    { value: "attendee", label: "Attendee Management" },
-    { value: "analytics", label: "Event Analytics" },
-    { value: "promotion", label: "Event Promotion" },
-    { value: "feedback", label: "Feedback and Surveys" },
-    { value: "live-streaming", label: "Live Streaming" },
-    { value: "social-media", label: "Social Media Integration" },
-  ];
   return (
     <div>
       <form
@@ -91,7 +72,7 @@ const AddService = () => {
             </label>
 
             <CreatableSelect
-              options={eventOptions}
+              options={serviceOptions}
               onChange={(selectedOptions) => {
                 setValue(
                   "features",
