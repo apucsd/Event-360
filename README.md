@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Event 360 Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Event 360 is an event organizer website that offers a range of event services in Bangladesh. This platform facilitates event planning, management, and service discovery, providing a seamless experience for both event organizers and attendees.
 
-Currently, two official plugins are available:
+## [Event 360 Live](https://event-360-frontend.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Dashboard Functionality:** Manage your events and services efficiently through a user-friendly dashboard.
+- **Event Management:** Easily add, update, and delete events to create a customized experience for your audience.
+- **Service Management:** Explore and offer various event services, enhancing the overall event experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **Frontend:**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+  - React
+  - Vite
+  - Framer Motion for animations
+  - Tailwind CSS for styling
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Backend:**
+
+  - MongoDB for data storage
+  - Express.js for server-side logic
+  - Node.js for backend development
+
+- **Other Libraries:**
+  - Shadcn UI for interactive UI components
+  - AOS for scroll animations
+  - React Query for data fetching
+  - ...and more
+
+## Setup Instructions
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/apucsd/event-360.git
+   cd event-360
+   npm install
+   npm run dev
+   ```
+
+- Visit http://localhost:3000 in your browser.

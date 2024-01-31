@@ -18,21 +18,13 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { axiosInstance } from "@/lib/axiosInstance";
-import { TService } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
 import { CircleEllipsis } from "lucide-react";
 import DeleteService from "@/crud/DeleteService";
 import UpdateService from "@/crud/UpdateService";
+import useServicesData from "@/hooks/useServicesData";
 
 const ManageService = () => {
-  const { data: services } = useQuery<TService[]>({
-    queryKey: ["services"],
-    queryFn: async () => {
-      const res = await axiosInstance("/services");
-      return res.data.result;
-    },
-  });
+  const { services } = useServicesData();
 
   return (
     <div>

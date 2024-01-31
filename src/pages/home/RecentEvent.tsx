@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import SectionTitles from "@/components/ui/SectionTitles";
 import {
   Carousel,
@@ -6,9 +7,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import useEventsData from "@/hooks/useEventsData";
 
 const RecentEvent = () => {
-  const recentEvents = [1, 2, 3, 4, 5];
+  const { events } = useEventsData();
+  const recentEvents = events
+    ? events?.slice().sort((a, b) => {
+        const dateA = new Date(a.date) as any;
+        const dateB = new Date(b.date) as any;
+        return dateB - dateA;
+      })
+    : [];
   return (
     <div className="p-20">
       <SectionTitles
@@ -22,16 +31,18 @@ const RecentEvent = () => {
             <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={i}>
               <div className="w-72 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1646753522408-077ef9839300?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8NjZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                  src={recentEvent.image as string}
                   alt="Product"
                   className="h-[220px] w-full mx-auto object-cover rounded-md"
                 />
-                <div className="my-2">
+                <div className="my-2 p-2">
                   <p className="text-lg font-bold k truncate block capitalize">
-                    Product Name
+                    {recentEvent.eventName}
                   </p>
                   <div className="flex items-center">
-                    <p className="my-3 text-[#475569]">By someone</p>
+                    <p className="my-3 text-[#475569]">
+                      By {recentEvent.organizerName}
+                    </p>
                   </div>
                 </div>
               </div>

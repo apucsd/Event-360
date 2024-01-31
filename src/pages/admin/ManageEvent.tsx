@@ -19,19 +19,10 @@ import {
 } from "@/components/ui/table";
 import DeleteEvent from "@/crud/DeleteEvent";
 import UpdateEvent from "@/crud/UpdateEvent";
-import { axiosInstance } from "@/lib/axiosInstance";
-import { TEvent } from "@/types/types";
-import { useQuery } from "@tanstack/react-query";
+import useEventsData from "@/hooks/useEventsData";
 import { CircleEllipsis } from "lucide-react";
 const ManageEvent = () => {
-  const { data: events } = useQuery<TEvent[]>({
-    queryKey: ["events"],
-    queryFn: async () => {
-      const res = await axiosInstance("/events");
-      return res.data.result;
-    },
-  });
-  console.log(events);
+  const { events } = useEventsData();
   return (
     <div>
       <Table className="bg-white rounded-md">
