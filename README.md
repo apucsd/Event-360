@@ -35,7 +35,7 @@ Event 360 is an event organizer website that offers a range of event services in
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/apucsd/event-360.git
+   git clone https://github.com/programming-hero-web-course1/l2-b2-assignment-5-frontend-apucsd.git
    cd event-360
    npm install
    npm run dev
