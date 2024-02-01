@@ -11,7 +11,7 @@ const Services = () => {
         subHeading="Crafting Unforgettable Moments, Every Angle Captured. Our 360° Event Services: Where Experiences Take Center Stage."
       ></SectionTitles>
 
-      <div className="grid gap-10 place-items-center  md:grid-cols-2 lg:grid-cols-3 p-5">
+      <div className="grid gap-5 md:gap-10 place-items-center grid-cols-1  md:grid-cols-2 lg:grid-cols-3 p-5">
         {services?.map((service) => (
           <ServiceCard key={service._id} service={service} />
         ))}

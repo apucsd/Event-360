@@ -9,10 +9,10 @@ const InfoCard = ({ className }: { className?: string }) => {
           className={cn(`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`)}
         >
           <div className="mx-auto max-w-2xl md:text-center">
-            <h2 className="font-display text-3xl tracking-tight text-primary sm:text-4xl">
+            <h2 className="font-display md:text-3xl text-xl tracking-tight text-primary sm:text-4xl">
               SUCCESSFULLY COMPLETED 7000+ Events
             </h2>
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 md:text-lg text-sm tracking-tight text-slate-700">
               Milestone Unlocked: 7000+ Events, Countless Smiles, and Endless
               Memories
             </p>
@@ -24,7 +24,7 @@ const InfoCard = ({ className }: { className?: string }) => {
             <li>
               <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
                 <li>
-                  <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
+                  <figure className="relative rounded-2xl bg-white md:p-5 p-1 text-center shadow-xl shadow-slate-900/10">
                     <blockquote className="relative p-3">
                       <p className="text-6xl font-bold tracking-tight text-primary">
                         <CountUp enableScrollSpy={true} end={7000} /> +
@@ -42,7 +42,7 @@ const InfoCard = ({ className }: { className?: string }) => {
             <li>
               <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
                 <li>
-                  <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
+                  <figure className="relative rounded-2xl bg-white md:p-5 p-1 text-center shadow-xl shadow-slate-900/10">
                     <blockquote className="relative p-3">
                       <p className="text-6xl font-bold tracking-tight text-primary">
                         <CountUp enableScrollSpy={true} end={1000} /> +
@@ -60,7 +60,7 @@ const InfoCard = ({ className }: { className?: string }) => {
             <li>
               <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
                 <li>
-                  <figure className="relative rounded-2xl bg-white p-6 text-center shadow-xl shadow-slate-900/10">
+                  <figure className="relative rounded-2xl bg-white md:p-5 p-1 text-center shadow-xl shadow-slate-900/10">
                     <blockquote className="relative p-3">
                       <p className="text-6xl font-bold tracking-tight text-primary">
                         <CountUp enableScrollSpy={true} end={97} /> %
@@ -77,7 +77,6 @@ const InfoCard = ({ className }: { className?: string }) => {
             </li>
           </ul>
         </div>
-        <div className="w-[800px] h-full rounded-[999px] absolute top-0 right-0 -z-10 blur-3xl bg-opacity-70 bg-gradient-to-r from-indigo-200 via-purple-200 to-fuchsia-400"></div>
       </section>
     </div>
   );

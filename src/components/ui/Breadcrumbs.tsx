@@ -21,7 +21,7 @@ const Breadcrumbs = () => {
 
   return (
     <div className=" ">
-      <div className="flex items-center py-4 overflow-x-auto whitespace-nowrap">
+      <div className="flex items-center py-4 overflow-x-auto whitespace-pre-wrap">
         <Link to="/" className="text-gray-600 hover:text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const Breadcrumbs = () => {
         </Link>
         {breadcrumbs.map((breadcrumb, index) => (
           <div key={breadcrumb.path}>
-            <span className="mx-5 bg-gray-100">/</span>
+            <span className="md:mx-5 bg-gray-100">/</span>
             <Link
               to={breadcrumb.path}
               className={`text-${

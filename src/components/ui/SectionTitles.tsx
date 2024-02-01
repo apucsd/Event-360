@@ -32,7 +32,7 @@ const SectionTitles = ({
         ref={ref}
         onMouseOver={replay}
         onFocus={replay}
-        className="text-[64px] font-bold"
+        className="text-[50px] md:text-[64px] font-bold"
       >
         {heading}
       </motion.h1>

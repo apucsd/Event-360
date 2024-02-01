@@ -35,7 +35,7 @@ const Banner = () => {
           alt=""
         />
       </div>
-      <div className="w-[300px] h-[300px] rounded-[999px] absolute top-[100px] left-20 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-green-200 via-cyan-200 to-Fuchsia-300"></div>
+      <div className="md:w-[300px] md:h-[300px] rounded-[999px] md:absolute top-[100px] left-20 -z-10 blur-3xl bg-opacity-60 bg-gradient-to-r from-green-200 via-cyan-200 to-Fuchsia-300"></div>
     </div>
   );
 };

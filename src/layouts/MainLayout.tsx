@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const MainLayout = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

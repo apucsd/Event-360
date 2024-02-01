@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/accordion";
 const Sidebar = () => {
   return (
-    <aside className="bg-white text-slate-700 rounded-md m-2 col-span-3 min-h-[100vh] sticky top-0 left-0 overflow-y-auto p-5 max-h-[98vh] ">
+    <aside className="bg-white text-slate-700 rounded-md md:m-2 col-span-3 h-screen sticky top-0 left-0 overflow-y-auto p-2 md:p-5 max-h-[98vh] ">
       <div className="mb-4 text-start hidden md:block ">
         <Link to="/">
           <span className="text-2xl font-semibold truncate">
@@ -24,7 +24,7 @@ const Sidebar = () => {
           </span>
         </Link>
       </div>
-      <nav className="flex flex-col gap-3">
+      <nav className="flex flex-col gap-3 w-full">
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -36,7 +36,7 @@ const Sidebar = () => {
             )
           }
         >
-          <MoveLeft className="shrink-0 p-1"></MoveLeft>
+          <MoveLeft className="shrink-0 size-4 md:size-3"></MoveLeft>
           <span className="truncate">Back Home</span>
         </NavLink>
         <NavLink
@@ -50,8 +50,8 @@ const Sidebar = () => {
             )
           }
         >
-          <LayoutDashboard className="shrink-0 p-1"></LayoutDashboard>
-          <span className="truncate"> Dashboard</span>
+          <LayoutDashboard className="shrink-0 size-4 md:size-3"></LayoutDashboard>
+          <span className="truncate">Dashboard</span>
         </NavLink>
 
         <NavLink
@@ -68,7 +68,7 @@ const Sidebar = () => {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="flex justify-start gap-1 truncate">
-                <Cog className="shrink-0 p-1"></Cog>{" "}
+                <Cog className="shrink-0 size-4 md:size-3"></Cog>{" "}
                 <div className="truncate block">Manage Service</div>
               </AccordionTrigger>
               <AccordionContent className="flex">
@@ -81,7 +81,7 @@ const Sidebar = () => {
                   }
                   to="/admin/manage-service/add-service"
                 >
-                  <CopyPlus className="shrink-0 p-1"></CopyPlus>
+                  <CopyPlus className="shrink-0 size-4 md:size-3"></CopyPlus>
                   <span className="truncate block">Add Services</span>
                 </NavLink>
               </AccordionContent>
@@ -102,7 +102,7 @@ const Sidebar = () => {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="flex justify-start gap-1 truncate">
-                <Calendar className="shrink-0 p-1"></Calendar>{" "}
+                <Calendar className="shrink-0 size-4 md:size-3"></Calendar>{" "}
                 <div className="truncate block">Manage Event</div>
               </AccordionTrigger>
               <AccordionContent className="flex">
@@ -115,7 +115,7 @@ const Sidebar = () => {
                   }
                   to="/admin/manage-event/add-event"
                 >
-                  <CalendarPlus className="shrink-0 p-1"></CalendarPlus>
+                  <CalendarPlus className="shrink-0 size-4 md:size-3"></CalendarPlus>
                   <span className="truncate block">Add Event</span>
                 </NavLink>
               </AccordionContent>

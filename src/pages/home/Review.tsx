@@ -48,8 +48,9 @@ const Review = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-l from-[#1e0044] to-[#660cd9] p-20  text-white ">
-      <h1 className="text-6xl">What everyone says</h1>
+    <div className="bg-gradient-to-l from-[#1e0044] to-[#660cd9] md:p-20 py-10  text-white ">
+      <br />
+      <h1 className="text-4xl md:text-6xl p-1">What everyone says</h1>
 
       <Carousel>
         <CarouselContent>

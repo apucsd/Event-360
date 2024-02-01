@@ -10,8 +10,8 @@ const Gallery = () => {
   ];
   return (
     <div className="relative my-20 py-10">
-      <div className="grid grid-cols-12 gap-5">
-        <div className="col-span-12 md:col-span-6 lg:col-span-5 mt-20">
+      <div className="grid grid-cols-12 justify-center place-items-center gap-5">
+        <div className="col-span-12 md:col-span-6 lg:col-span-5 md:mt-20 p-4">
           <SectionTitles
             className="text-start space-y-6"
             heading="Gallery"
@@ -97,7 +97,7 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-      <div className="w-[800px] h-full rounded-[999px] absolute top-0 right-0 -z-10 blur-3xl bg-opacity-70 bg-gradient-to-r from-indigo-200 via-purple-200 to-fuchsia-400"></div>
+      <div className="md:w-[800px] h-full rounded-[999px] md:absolute hidden top-0 right-0 -z-10 blur-3xl bg-opacity-70 bg-gradient-to-r from-indigo-200 via-purple-200 to-fuchsia-400"></div>
     </div>
   );
 };

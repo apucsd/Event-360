@@ -19,7 +19,7 @@ const RecentEvent = () => {
       })
     : [];
   return (
-    <div className="p-20">
+    <div className="md:p-20 p-10">
       <SectionTitles
         heading="Recent Events"
         subHeading="Step into the world of our latest events, where each moment tells a unique story of joy, connection, and celebration."
@@ -29,7 +29,7 @@ const RecentEvent = () => {
         <CarouselContent>
           {recentEvents.map((recentEvent, i) => (
             <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={i}>
-              <div className="w-72 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+              <div className="md:w-72 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                 <img
                   src={recentEvent.image as string}
                   alt="Product"
