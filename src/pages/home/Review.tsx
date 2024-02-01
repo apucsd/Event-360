@@ -52,23 +52,25 @@ const Review = () => {
       <br />
       <h1 className="text-4xl md:text-6xl p-1">What everyone says</h1>
 
-      <Carousel>
-        <CarouselContent>
-          {testimonials.map((testimonial, i) => (
-            <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={i}>
-              {" "}
-              <TestimonialCard
-                name={testimonial.name}
-                role={testimonial.role}
-                avatar={testimonial.avatar}
-                text={testimonial.text}
-              ></TestimonialCard>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="text-black" />
-        <CarouselNext className="text-black" />
-      </Carousel>
+      <div className="w-full">
+        <Carousel>
+          <CarouselContent>
+            {testimonials.map((testimonial, i) => (
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3" key={i}>
+                {" "}
+                <TestimonialCard
+                  name={testimonial.name}
+                  role={testimonial.role}
+                  avatar={testimonial.avatar}
+                  text={testimonial.text}
+                ></TestimonialCard>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="text-black md:block hidden" />
+          <CarouselNext className="text-black md:block hidden" />
+        </Carousel>
+      </div>
     </div>
   );
 };

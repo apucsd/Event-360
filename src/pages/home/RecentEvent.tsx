@@ -19,7 +19,7 @@ const RecentEvent = () => {
       })
     : [];
   return (
-    <div className="md:p-20 p-10">
+    <div className="md:p-12 p-3">
       <SectionTitles
         heading="Recent Events"
         subHeading="Step into the world of our latest events, where each moment tells a unique story of joy, connection, and celebration."
@@ -49,8 +49,8 @@ const RecentEvent = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="text-black" />
-        <CarouselNext className="text-black" />
+        <CarouselPrevious className="text-black md:block hidden" />
+        <CarouselNext className="text-black md:block hidden" />
       </Carousel>
     </div>
   );

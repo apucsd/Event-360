@@ -5,7 +5,7 @@ import useServicesData from "@/hooks/useServicesData";
 const Services = () => {
   const { services } = useServicesData();
   return (
-    <div className="relative">
+    <div className="relative ">
       <SectionTitles
         heading="Services"
         subHeading="Crafting Unforgettable Moments, Every Angle Captured. Our 360° Event Services: Where Experiences Take Center Stage."
